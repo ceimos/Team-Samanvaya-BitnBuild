@@ -19,6 +19,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from core import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cloth_list', views.cloth_list),
+    path('save_cloth', views.save_cloth),
+    path('get_csrf_token', views.get_csrf_token),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
