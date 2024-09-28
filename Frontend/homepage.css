@@ -11,18 +11,18 @@
 
 body {
     font-family: 'FLEVOUR', sans-serif;
-    margin: 0; /* Remove default margin */
-    background-color: #f9f9f9; /* Light background for contrast */
+    margin: 0; 
+    background-color: #f9f9f9; 
     background-image: url('images/Homepage.jpg');
-    color: #333; /* Default text color */
+    color: #333; 
     background-size: cover;
 }
 
 h1 {
     color: rgb(72, 66, 83);
     text-align: center;
-    padding: 20px; /* Reduced padding for a compact look */
-    margin: 0; /* Remove default margin */
+    padding: 20px; 
+    margin: 0; 
 }
 
 main {
@@ -30,55 +30,54 @@ main {
     animation: fadeIn 0.5s ease;
 }
 
-/* Header Styles */
-/* Header Styles */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Increased padding for a more spacious look */
-    background-color: rgba(244, 244, 244, 0.8); /* Light gray with 80% opacity */
-    border-bottom: 1px solid rgba(221, 221, 221, 0.8); /* Slightly transparent border */
-    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
-    backdrop-filter: blur(5px); /* Adds a blur effect behind the header */
+    padding: 10px 20px; 
+    background-color: rgba(244, 244, 244, 0.8); 
+    border-bottom: 1px solid rgba(221, 221, 221, 0.8); 
+    border-radius: 0 0 10px 10px; 
+    backdrop-filter: blur(5px); 
 }
 
-/* Header h1 Styles */
+
 header h1 {
     margin: 0;
-    font-size: 24px; /* Adjust font size for better visibility */
+    font-size: 24px; 
 }
 
-/* Logout Button Styles */
+
 header #logout {
-    background-color: rgba(255, 77, 77, 0.9); /* Red background with 90% opacity */
+    background-color: rgba(255, 77, 77, 0.9); 
     border: none;
     color: white;
-    padding: 8px 15px; /* Padding */
+    padding: 8px 15px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 5px; /* Rounded corners for the button */
+    border-radius: 5px; 
 }
 
 header #logout:hover {
-    background-color: rgba(230, 0, 0, 1); /* Darker red on hover */
+    background-color: rgba(230, 0, 0, 1); 
 }
 
-/* Card Container Styles */
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Gap between cards */
-    justify-content: center; /* Center align cards */
+    gap: 10px; 
+    justify-content: center; 
 }
 
-/* Card Styles */
+
 .card {
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px; /* More rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 200px; /* Slightly increased width */
-    min-height: 350px; /* Adjusted height */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 200px; 
+    min-height: 350px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
@@ -91,41 +90,41 @@ header #logout:hover {
 
 .card img {
     width: 100%;
-    height: 180px; /* Adjusted height */
+    height: 180px; 
     object-fit: cover;
 }
 
 .card-content {
-    padding: 15px; /* Increased padding */
+    padding: 15px; 
     text-align: center;
 }
 
 .card-content h3 {
     margin: 0;
-    font-size: 18px; /* Increased font size for better readability */
+    font-size: 18px;
 }
 
-/* Card Hover Effects */
+
 .card:hover .card-content {
     transform: scale(1.05);
 }
 
 .card:hover {
-    transform: translateY(-3px); /* Subtle lift on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Quick Actions Button Styles */
+
 #quick-actions .card button {
     width: 100%;
-    padding: 10px; /* Increased padding */
+    padding: 10px; 
     margin-top: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; /* Increased font size */
+    font-size: 16px; 
     transition: background-color 0.3s;
 }
 
@@ -133,7 +132,7 @@ header #logout:hover {
     background-color: #45a049;
 }
 
-/* Keyframe Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -156,29 +155,29 @@ header #logout:hover {
     }
 }
 
-/* Welcome Section Styles */
+
 #welcome {
-    padding: 20px; /* Adjusted padding */
+    padding: 20px; 
     text-align: center;
-    background-color: #ffffff; /* White background for contrast */
+    background-color: #ffffff; 
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-bottom: 20px; /* Increased margin */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px; 
 }
 
 #welcome h2 {
-    font-size: 22px; /* Adjusted font size */
-    color: #444; /* Slightly darker text */
+    font-size: 22px; 
+    color: #444; 
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     .card-container {
-        flex-direction: column; /* Stack cards on small screens */
-        align-items: center; /* Center align cards */
+        flex-direction: column; 
+        align-items: center; 
     }
     
     .card {
-        width: 90%; /* Full width on small screens */
+        width: 90%; 
     }
 }
