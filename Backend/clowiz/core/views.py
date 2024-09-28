@@ -77,3 +77,6 @@ def user_register_page(request):
 
 def new_cloth_page(request):
     return render(request, 'new_cloth.html', {})
+
+def view_wardrobe(request):
+    return render(request, 'view-wardrobe.html', {})

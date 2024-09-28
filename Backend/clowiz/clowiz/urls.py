@@ -31,4 +31,5 @@ urlpatterns = [
     #path('logout', views.user_logout, name='logout'),
     path('register', views.user_register_page, name='register'),
     path('new_cloth', views.new_cloth_page, name='new_cloth'),
+    path('view_wardrobe', views.view_wardrobe, name='view_wardrobe'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
