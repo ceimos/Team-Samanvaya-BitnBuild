@@ -40,3 +40,7 @@ def save_cloth(request):
 
 def get_csrf_token(request):
     return JsonResponse({'csrf_token': get_token(request)})
+
+
+def home(request):
+    return render(request, 'home.html', {})
