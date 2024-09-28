@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@font-face {
+    font-family: 'FLEVOUR';
+    src: url('fonts/FLEVOUR-Regular.woff2') format('woff2'),
+         url('fonts/FLEVOUR-Regular.woff') format('woff'),
+         url('fonts/FLEVOUR-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'FLEVOUR', sans-serif;
+    margin: 0; /* Remove default margin */
+    background-color: #f9f9f9; /* Light background for contrast */
+    background-image: url('images/Homepage.jpg');
+    color: #333; /* Default text color */
+    background-size: cover;
+}
+
+h1 {
+    color: rgb(72, 66, 83);
+    text-align: center;
+    padding: 20px; /* Reduced padding for a compact look */
+    margin: 0; /* Remove default margin */
+}
+
+main {
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Header Styles */
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Increased padding for a more spacious look */
+    background-color: rgba(244, 244, 244, 0.8); /* Light gray with 80% opacity */
+    border-bottom: 1px solid rgba(221, 221, 221, 0.8); /* Slightly transparent border */
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+    backdrop-filter: blur(5px); /* Adds a blur effect behind the header */
+}
+
+/* Header h1 Styles */
+header h1 {
+    margin: 0;
+    font-size: 24px; /* Adjust font size for better visibility */
+}
+
+/* Logout Button Styles */
+header #logout {
+    background-color: rgba(255, 77, 77, 0.9); /* Red background with 90% opacity */
+    border: none;
+    color: white;
+    padding: 8px 15px; /* Padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Rounded corners for the button */
+}
+
+header #logout:hover {
+    background-color: rgba(230, 0, 0, 1); /* Darker red on hover */
+}
+
+/* Card Container Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Gap between cards */
+    justify-content: center; /* Center align cards */
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 200px; /* Slightly increased width */
+    min-height: 350px; /* Adjusted height */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    animation: fadeInCard 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 180px; /* Adjusted height */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px; /* Increased padding */
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 18px; /* Increased font size for better readability */
+}
+
+/* Card Hover Effects */
+.card:hover .card-content {
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
+
+/* Quick Actions Button Styles */
+#quick-actions .card button {
+    width: 100%;
+    padding: 10px; /* Increased padding */
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s;
+}
+
+#quick-actions .card button:hover {
+    background-color: #45a049;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Welcome Section Styles */
+#welcome {
+    padding: 20px; /* Adjusted padding */
+    text-align: center;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+#welcome h2 {
+    font-size: 22px; /* Adjusted font size */
+    color: #444; /* Slightly darker text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stack cards on small screens */
+        align-items: center; /* Center align cards */
+    }
+    
+    .card {
+        width: 90%; /* Full width on small screens */
+    }
+}
