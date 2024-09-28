@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Clothes</title>
+    <link rel="stylesheet" href="addsession.css">
+</head>
+<body>
+    <div class="add-clothes-container">
+        <h1>Add New Clothing Item</h1>
+        <form class="add-clothes-form">
+            <!-- Item Name -->
+            <div class="input-group">
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" placeholder="Enter the name of the clothing item" required>
+            </div>
+
+            <!-- Upload Image -->
+            <div class="input-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" accept="image/*" required>
+            </div>
+
+            <!-- Purchase Date -->
+            <div class="input-group">
+                <label for="purchase-date">Purchase Date:</label>
+                <input type="date" id="purchase-date" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="input-group">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
