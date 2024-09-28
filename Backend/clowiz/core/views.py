@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django import http
 from django.http import JsonResponse
 from .models import Cloth
@@ -6,6 +6,9 @@ import base64
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+ 
 # Create your views here.
 
 @login_required
@@ -44,3 +47,33 @@ def get_csrf_token(request):
 
 def home(request):
     return render(request, 'home.html', {})
+
+def user_login_page(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else :
+            print("user not authenticated")
+        
+    return render(request, 'login.html', {})
+
+def user_register_page(request):
+    form = UserCreationForm()
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        
+    context = {'form' : form}
+    return render(request, 'register.html', context)
+
+def new_cloth_page(request):
+    return render(request, 'new_cloth.html', {})

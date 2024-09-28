@@ -26,5 +26,9 @@ urlpatterns = [
     path('cloth_list', views.cloth_list),
     path('save_cloth', views.save_cloth),
     path('get_csrf_token', views.get_csrf_token),
-    path('',views.home),
+    path('',views.home, name='home'),
+    path('login', views.user_login_page, name='login'),
+    #path('logout', views.user_logout, name='logout'),
+    path('register', views.user_register_page, name='register'),
+    path('new_cloth', views.new_cloth_page, name='new_cloth'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

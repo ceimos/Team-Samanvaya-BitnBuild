@@ -1,11 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from datetime import date
+from django.utils import timezone
 # Create your models here.
 class User(AbstractUser):
-    
-    def __str__(self):
-        return self.username
+    pass
 
 class Cloth(models.Model):
     name = models.CharField(max_length=100)
@@ -14,6 +13,7 @@ class Cloth(models.Model):
     type = models.CharField(max_length=100)
     usecount = models.IntegerField()
     owner = models.ForeignKey('User', on_delete=models.CASCADE)
+    #purchase_date = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):
         return self.name
