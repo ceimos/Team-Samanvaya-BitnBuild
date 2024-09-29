@@ -9,23 +9,27 @@
 <body>
     <div class="add-clothes-container">
         <h1>Add New Clothing Item</h1>
-        <form class="add-clothes-form">
+        <form method="POST" class="add-clothes-form" enctype="multipart/form-data">
+            {%csrf_token%}
             <!-- Item Name -->
             <div class="input-group">
                 <label for="name">Item Name:</label>
-                <input type="text" id="name" placeholder="Enter the name of the clothing item" required>
+                <!--<input name="Cloth_name" type="text" id="name" placeholder="Enter the name of the clothing item" required>
+                -->
+                {{form.name}}
             </div>
 
             <!-- Upload Image -->
             <div class="input-group">
                 <label for="image">Upload Image:</label>
-                <input type="file" id="image" accept="image/*" required>
+                <!-- <input name="cloth_image" type="file" id="image" accept="image/*" required> -->
+                {{form.image}}
             </div>
 
             <!-- Purchase Date -->
             <div class="input-group">
                 <label for="purchase-date">Purchase Date:</label>
-                <input type="date" id="purchase-date" required>
+                <input name=""type="date" id="purchase-date" required>
             </div>
 
             <!-- Submit Button -->

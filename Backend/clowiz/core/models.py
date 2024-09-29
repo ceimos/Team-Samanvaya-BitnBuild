@@ -10,8 +10,8 @@ class Cloth(models.Model):
     name = models.CharField(max_length=100)
     id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to='images/', default='images/default.jpg')
-    type = models.CharField(max_length=100)
-    usecount = models.IntegerField()
+    type = models.CharField(max_length=100, blank=True, null=True)
+    usecount = models.IntegerField(default=0, blank=False, null=False)
     owner = models.ForeignKey('User', on_delete=models.CASCADE)
     #purchase_date = models.DateField(default=None, blank=True, null=True)
 

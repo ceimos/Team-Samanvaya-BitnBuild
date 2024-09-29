@@ -8,6 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+
+from .forms import NewClothForm
  
 # Create your views here.
 
@@ -63,7 +65,18 @@ def user_register_page(request):
     return render(request, 'register.html', context)
 
 def new_cloth_page(request):
-    return render(request, 'new_cloth.html', {})
+    if request.method == "POST":
+        form = NewClothForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_cloth = form.save(commit=False)
+            new_cloth.owner = request.user  # Set the owner to the logged-in user
+            new_cloth.save()
+            print(new_cloth.image.url,new_cloth.image)
+            return redirect('dashboard')
+    else:
+        form = NewClothForm()
+        
+    return render(request, 'new_cloth.html', {'form': form})
 
 def view_wardrobe(request):
     user = request.user
