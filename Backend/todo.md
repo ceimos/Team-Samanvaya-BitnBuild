@@ -1,0 +1,2 @@
+- [ ] ADD: Delete Button for Cloth in Wardrobe.
+- [ ]
