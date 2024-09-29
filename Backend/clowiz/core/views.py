@@ -86,3 +86,6 @@ def wardrobe_usage(request):
 
 def sustainability(request):
     return render(request, 'sustainability.html', {})
+
+def outfit_combo(request):
+    return render(request, 'outfit_combo.html', {})

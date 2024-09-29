@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Combinations</title>
+    <link rel="stylesheet" href="static/combinations.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Outfit Combinations</h1>
+    </header>
+
+    <main>
+        <section id="sunglasses">
+            <h2>Sunglasses</h2>
+            <div class="card-container" id="sunglasses-items"></div>
+        </section>
+
+        <section id="shirts">
+            <h2>Shirts</h2>
+            <div class="card-container" id="shirts-items"></div>
+        </section>
+
+        <section id="pants">
+            <h2>Pants</h2>
+            <div class="card-container" id="pants-items"></div>
+        </section>
+
+        <section id="shoes">
+            <h2>Shoes</h2>
+            <div class="card-container" id="shoes-items"></div>
+        </section>
+
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <div id="most-used" class="recommendation">
+                <h3>Most Used Items</h3>
+                <div class="card-container" id="most-used-items"></div>
+            </div>
+            <div id="least-used" class="recommendation">
+                <h3>Least Used Items</h3>
+                <div class="card-container" id="least-used-items"></div>
+            </div>
+        </section>
+
+        <section id="outfit-combinations">
+            <h2>Outfit Combinations</h2>
+            <div class="button-container">
+                <button id="generate-random-combinations">Generate Random Combinations</button>
+                <button id="generate-least-used-combinations">Generate Combinations from Least Used</button>
+                <button id="generate-most-used-combinations">Generate Combinations from Most Used</button>
+                <button id="select-random-combination">Select Random Combination</button> 
+            </div>
+            </div>
+            <div class="card-container" id="combinations-container"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -35,4 +35,5 @@ urlpatterns = [
     path('view_wardrobe', views.view_wardrobe, name='view_wardrobe'),
     path('wardrobe_usage', views.wardrobe_usage, name='wardrobe_usage'),
     path('sustainability', views.sustainability, name='sustainability'),
+    path('outfit_combo', views.outfit_combo, name='outfit_combo'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
