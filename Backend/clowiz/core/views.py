@@ -80,3 +80,9 @@ def new_cloth_page(request):
 
 def view_wardrobe(request):
     return render(request, 'view-wardrobe.html', {})
+
+def wardrobe_usage(request):
+    return render(request, 'wardrobe_usage.html', {})
+
+def sustainability(request):
+    return render(request, 'sustainability.html', {})
