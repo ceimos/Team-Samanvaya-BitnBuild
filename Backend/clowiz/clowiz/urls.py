@@ -36,4 +36,5 @@ urlpatterns = [
     path('wardrobe_usage', views.wardrobe_usage, name='wardrobe_usage'),
     path('sustainability', views.sustainability, name='sustainability'),
     path('outfit_combo', views.outfit_combo, name='outfit_combo'),
+    path('donate', views.donate, name='donate'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

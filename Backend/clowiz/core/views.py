@@ -89,3 +89,6 @@ def sustainability(request):
 
 def outfit_combo(request):
     return render(request, 'outfit_combo.html', {})
+
+def donate(request):
+    return render(request, 'donate.html', {})
