@@ -34,6 +34,10 @@ def user_login_page(request):
         
     return render(request, 'login.html', {})
 
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+
 def user_register_page(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
