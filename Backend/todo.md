@@ -1,2 +1,3 @@
-- [ ] ADD: Delete Button for Cloth in Wardrobe.
-- [ ]
+- [ ] FEAT : Delete Button for Cloth in Wardrobe.
+- [ ] FEAT : Update Use Count
+- [ ] FEAT : proper User messages for backend validation actions (e.g. registration, and form submission)
