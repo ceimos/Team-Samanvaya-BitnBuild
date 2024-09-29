@@ -13,7 +13,7 @@
     <div class="register-container">
         <div class="register-box">
             <h1>Create Your Account</h1>
-            <form action="#" method="POST">
+            <form method="POST">
                 {% csrf_token %}
                 <div class="input-row">
                     <div class="input-group">
@@ -45,7 +45,7 @@
                     -->
                     {{form.password1.label}}
                     {{form.password1}}
-                    {{form.password.labe2}}
+                    {{form.password2.label}}
                     {{form.password2}}
                 </div>
 

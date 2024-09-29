@@ -1,10 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from datetime import date
 from django.utils import timezone
 # Create your models here.
-class User(AbstractUser):
-    pass
 
 class Cloth(models.Model):
     name = models.CharField(max_length=100)
@@ -12,7 +11,7 @@ class Cloth(models.Model):
     image = models.ImageField(upload_to='images/', default='images/default.jpg')
     type = models.CharField(max_length=100, blank=True, null=True)
     usecount = models.IntegerField(default=0, blank=False, null=False)
-    owner = models.ForeignKey('User', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     #purchase_date = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):
@@ -21,7 +20,7 @@ class Cloth(models.Model):
 class Outfit(models.Model):
     id = models.AutoField(primary_key=True)
     usecount = models.IntegerField()
-    owner = models.ForeignKey('User', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -36,8 +35,8 @@ class OutfitCloth(models.Model):
     
 class Donation(models.Model):
     id = models.AutoField(primary_key=True)
-    doner = models.ForeignKey('User', on_delete=models.CASCADE, related_name='doner')
-    reciever = models.ForeignKey('User', on_delete=models.CASCADE, related_name='reciever')
+    doner = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='doner')
+    reciever = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='reciever')
     cloth = models.ForeignKey('Cloth', on_delete=models.CASCADE)
     date = models.DateField()
 
@@ -46,8 +45,8 @@ class Donation(models.Model):
 
 class Sell(models.Model):
     id = models.AutoField(primary_key=True)
-    seller = models.ForeignKey('User', on_delete=models.CASCADE, related_name='seller')
-    buyer = models.ForeignKey('User', on_delete=models.CASCADE, related_name='buyer')
+    seller = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='seller')
+    buyer = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='buyer')
     cloth = models.ForeignKey('Cloth', on_delete=models.CASCADE)
     date = models.DateField()
     price = models.FloatField()

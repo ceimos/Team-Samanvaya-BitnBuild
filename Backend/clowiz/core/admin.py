@@ -4,7 +4,6 @@ from django.contrib.auth.admin import UserAdmin
 from .models import Cloth, Outfit, OutfitCloth, Donation, Sell, SustainibilityDetails, User
 
 admin.site.register(Cloth)
-admin.site.register(User)
 admin.site.register(Outfit)
 admin.site.register(OutfitCloth)
 admin.site.register(Donation)

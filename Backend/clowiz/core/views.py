@@ -13,26 +13,8 @@ from .forms import NewClothForm
  
 # Create your views here.
 
-
-def save_cloth(request):
-    if request.method == 'POST':
-        user = request.user
-        name = request.POST.get('name')
-        image = request.FILES.get('image')
-        type = request.POST.get('type')
-        usecount = 0 
-        
-        cloth = Cloth(name=name, image=image, type=type, usecount=usecount, owner=user)
-        cloth.save()
-        
-        return JsonResponse({'message': 'success'})
-    else:
-        return JsonResponse({'message': 'error', 'error': 'Invalid request method'})
-    
-
 def get_csrf_token(request):
     return JsonResponse({'csrf_token': get_token(request)})
-
 
 def home(request):
     return render(request, 'home.html', {})
@@ -53,15 +35,19 @@ def user_login_page(request):
     return render(request, 'login.html', {})
 
 def user_register_page(request):
-    form = UserCreationForm()
-
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            print("registration data is valid")
             form.save()
             return redirect('login')
-        
-    context = {'form' : form}
+        else:
+            print("Form is not valid")
+            print(form.errors)
+    else:
+        form = UserCreationForm()
+    
+    context = {'form': form}
     return render(request, 'register.html', context)
 
 def new_cloth_page(request):
@@ -71,7 +57,6 @@ def new_cloth_page(request):
             new_cloth = form.save(commit=False)
             new_cloth.owner = request.user  # Set the owner to the logged-in user
             new_cloth.save()
-            print(new_cloth.image.url,new_cloth.image)
             return redirect('dashboard')
     else:
         form = NewClothForm()
