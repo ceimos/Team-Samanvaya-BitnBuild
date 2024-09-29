@@ -13,76 +13,16 @@
     <div class="container">
         <h1>Current Wardrobe</h1>
         <div class="product-list">
+            {% for clothe in clothes %}
             <div class="product-container">
                 <div class="product-image">
-                    <img src="jac1 (1).png" alt="Jacket Image">
+                    <img src="{{clothe.image.url}}" alt="Jacket Image">
                 </div>
                 <div class="product-details">
-                    <h2 class="product-name">Jacket</h2>
-                    <p class="product-amount">Amount: <span class="price">Rs. 6000</span></p>
-                    <p class="product-date">Product Purchase Day & Date: <span class="date">Mon, 24-09-2022</span></p>
-                    <p class="product-date">Product Last Used Day & Date: <span class="date">sat, 03-09-2023</span></p>
+                    <h2 class="product-name">{{clothe.name}}</h2>
+                    <p class="use count">Product use count <span class="date">{{clothe.last_used_date}}</span></p>
                 </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-image">
-                    <img src="pant1 (3).png" alt="Pant Image">
-                </div>
-                <div class="product-details">
-                    <h2 class="product-name">Pant</h2>
-                    <p class="product-amount">Amount: <span class="price">Rs. 3000</span></p>
-                    <p class="product-date">Product Purchase Day & Date: <span class="date">Mon, 23-09-2023</span></p>
-                    <p class="product-date">Product Last Used Day & Date: <span class="date">sun, 13-06-2024</span></p>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-image">
-                    <img src="hat1 (4).png">
-                </div>
-                <div class="product-details">
-                    <h2 class="product-name">hat</h2>
-                    <p class="product-amount">Amount: <span class="price">Rs. 1000</span></p>
-                    <p class="product-date">Product Purchase Day & Date: <span class="date">Mon, 24-09-2022</span></p>
-                    <p class="product-date">Product Last Used Day & Date: <span class="date">Tue, 05-08-2023</span></p>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-image">
-                    <img src="spects1 (5).png">
-                </div>
-                <div class="product-details">
-                    <h2 class="product-name">cool glass</h2>
-                    <p class="product-amount">Amount: <span class="price">Rs. 8000</span></p>
-                    <p class="product-date">Product Purchase Day & Date: <span class="date">Tue, 25-09-2022</span></p>
-                    <p class="product-date">Product Last Used Day & Date: <span class="date">sat, 03-09-2023</span></p>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-image">
-                    <img src="sho1 (4).png">
-                </div>
-                <div class="product-details">
-                    <h2 class="product-name">Shoe</h2>
-                    <p class="product-amount">Amount: <span class="price">Rs. 10000</span></p>
-                    <p class="product-date">Product Purchase Day & Date: <span class="date">Mon, 24-09-2022</span></p>
-                    <p class="product-date">Product Last Used Day & Date: <span class="date">Sun, 04-09-2023</span></p>
-                </div>
-            </div>
-
-            <div class="product-container">
-                <div class="product-image">
-                    <img src="watch1 (3).png">
-                </div>
-                <div class="product-details">
-                    <h2 class="product-name">Watch</h2>
-                    <p class="product-amount">Amount: <span class="price">Rs. 3000</span></p>
-                    <p class="product-date">Product Purchase Day & Date: <span class="date">Mon, 24-09-2022</span></p>
-                    <p class="product-date">Product Last Used Day & Date: <span class="date">sat, 02-05-2024</span></p>
-                </div>
+            {% endfor %}
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cloth_list', views.cloth_list),
+    #path('cloth_list', views.cloth_list),
     path('save_cloth', views.save_cloth),
     path('get_csrf_token', views.get_csrf_token),
     path('',views.user_login_page, name='login'),

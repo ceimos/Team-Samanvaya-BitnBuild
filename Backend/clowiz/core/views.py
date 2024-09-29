@@ -11,19 +11,6 @@ from django.contrib.auth import authenticate, login, logout
  
 # Create your views here.
 
-@login_required
-def cloth_list(request):
-    user = request.user
-    clothes = Cloth.objects.filter(owner=user)
-    
-    def get_image_data(cloth):
-        with open(cloth.image.path, "rb") as image_file:
-                return base64.b64encode(image_file.read()).decode('utf-8')
-
-    for cloth in clothes:
-        cloth.image = get_image_data(cloth)
-
-    return JsonResponse({'cloth_list': list(clothes.values('id', 'name', 'image', 'type', 'usecount'))})
 
 def save_cloth(request):
     if request.method == 'POST':
@@ -79,7 +66,10 @@ def new_cloth_page(request):
     return render(request, 'new_cloth.html', {})
 
 def view_wardrobe(request):
-    return render(request, 'view-wardrobe.html', {})
+    user = request.user
+    clothes = Cloth.objects.filter(owner=user)
+    context = {'clothes': clothes}
+    return render(request, 'view-wardrobe.html', context)
 
 def wardrobe_usage(request):
     return render(request, 'wardrobe_usage.html', {})
